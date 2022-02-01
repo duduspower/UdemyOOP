@@ -1,15 +1,26 @@
 package ExtendArray;
 
 public class Array2 {
-    Array1 array1 = new Array1();
 
-    int[] array = new int[array1.length()];
+        private int length;
 
-    public int[] makeSecondArray(int[] array){
-        for(int i = 0; i < array.length; i++){
-            this.array[i] = array[i];
-            this.array[i + array.length] = array[i] * 2;
+        public void setLength(int number){
+            this.length = number;
         }
-        return this.array;
-    }
+
+        public int[] makeArray(int[] oldArray){
+            int[] array = new int [length];
+
+            double temp;
+
+            for(int i = 0; i < oldArray.length; i++){
+                array[i] = oldArray[i];
+            }
+            for(int i = 0; i < oldArray.length; i++){
+                array[i + oldArray.length] = oldArray[i] * 2;
+            }
+
+            return array;
+        }
 }
+
